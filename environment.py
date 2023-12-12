@@ -7,9 +7,19 @@ class Game:
     ACTION_DOWN = 2
     ACTION_RIGHT = 3
 
-    ACTIONS = [ACTION_DOWN, ACTION_LEFT, ACTION_RIGHT, ACTION_UP]
+    ACTIONS = [
+        ACTION_UP,
+        ACTION_LEFT,
+        ACTION_DOWN,
+        ACTION_RIGHT,
+    ]
 
-    ACTION_NAMES = ["UP", "LEFT", "DOWN", "RIGHT"]
+    ACTION_NAMES = [
+        "UP",
+        "LEFT",
+        "DOWN",
+        "RIGHT"
+    ]
 
     MOVEMENTS = {
         ACTION_UP: (1, 0),
