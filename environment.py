@@ -121,19 +121,25 @@ class Game:
             self.position = new_x, new_y
             return self._get_state(), -1, False, self.ACTIONS
 
-    def print(self):
-        str = ""
+    def __str__(self):
+        return self.affiche()
+
+    def affiche(self, debug=False):
+        s = ""
         for i in range(self.n - 1, -1, -1):
             for j in range(self.m):
+                if debug:
+                    s += str(i+j*self.n) + " "
+                    continue
                 if (i, j) == self.position:
-                    str += "x"
+                    s += "x"
                 elif (i, j) == self.block:
-                    str += "¤"
+                    s += "¤"
                 elif (i, j) == self.hole:
-                    str += "o"
+                    s += "o"
                 elif (i, j) == self.end:
-                    str += "@"
+                    s += "@"
                 else:
-                    str += "."
-            str += "\n"
-        print(str)
+                    s += "."
+            s += "\n"
+        return s
